@@ -28,7 +28,7 @@ macro TaskTip [
 
 textreport frame "" {
   header -8<-
-    == [[File:icons/pitivi.png|bottom]] ${project_name} -- Project Plan ==
+    == [[File:icons/pitivi.png|bottom]] ${fullname} -- Project Plan ==
     <[navigator id="navbar"]>
   ->8-
   footer "----"
@@ -101,7 +101,7 @@ taskreport overview "" {
   timeformat "%a %Y-%m-%d"
   loadunit days
   hideresource 1
-  balance cost rev
+  balance cost fundraised_account
   caption 'All effort values are in man days.'
 
   footer -8<-

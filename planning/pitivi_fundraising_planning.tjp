@@ -1,68 +1,78 @@
-/*
- * This file contains the project scehdule for the funraising project from the pitivi team
- */
-project pitivifundraising "Pitivi fundraising"  2014-01-01-0:00--0500 +4m {
-  # Set the default time zone for the project. If not specified, UTC
-  # is used.
-  timezone "Europe/Paris"
-  # Hide the clock time. Only show the date.
-  timeformat "%Y-%m-%d"
-  # Use US format for numbers
-  numberformat "-" "" "," "." 1
-  # Use US financial format for currency values. Don't show cents.
-  currencyformat "(" ")" "," "." 0
-  # Pick a day during the project that will be reported as 'today' in
-  # the project reports. If not specified, the current day will be
-  # used, but this will likely be outside of the project range, so it
-  # can't be seen in the reports.
-  now 2014-01-01
+/*****************************************************************************
+ * This file contains the project scehdule for the funraising project from   *
+ * the pitivi team                                                           *
+ *****************************************************************************/
 
-  # The currency for all money values is the Euro.
+/*******************
+ *     Macros      *
+ *******************/
+
+macro name ["pitivi.fundraising"]
+macro fullname ["Pitivi: Open source video edition to the next level"]
+macro allocate_devs    [allocate mathieu, thibault]
+macro allocate_all     [allocate mathieu, jeff, thibault]
+macro allocate_market  [allocate jeff]
+macro allocate_design  [allocate jeff]
+macro allocate_jeff    [allocate jeff]
+macro allocate_mathieu [allocate mathieu]
+macro allocate_thib    [allocate thibault]
+
+/****************************
+ *  Main project definition *
+ ****************************/
+project ${name} ${fullname}  2014-01-01-0:00--0500 +4m {
+  timezone "Europe/Paris"
+  timeformat "%Y-%m-%d"
+  numberformat "-" "" "," "." 1    # Use US format for numbers
+  currencyformat "(" ")" "," "." 0 # Use US financial format for currency values. Don't show cents.
   currency "Euro"
 
   # You can define multiple scenarios here if you need them.
-  scenario plan "Plan" {
+  scenario plan "Original plan" {
     scenario actual "Actual"
   }
 
-  # You can define your own attributes for tasks and resources. This
-  # is handy to capture additonal information about the project that
-  # is not directly impacting the project schedule but you like to
-  # keep in one place.
-  #extend task {
-  #  reference spec "Link to Wiki page"
-  #}
-  #extend resource {
-  #  text Phone "Phone"
-  #}
+  # Limit working days
+  workinghours sat,sun off
 }
 
-copyright "Thibault Saunier <tsaunier@gnome.org>"
+copyright "Pitivi team: Mathieu Duponchelle, Jean Francois Fortin-tam, Thibault Saunier"
 
+/******************
+ *     Flags      *
+ ******************/
+flags bugtriage
+flags pm
+flags marketing
+flags devel
+flags docs
+flags important
+flags hidden
 
-# You can attach flags to accounts, resources and tasks. These can be
-# used to filter out subsets of them during reporting.
-flags important, hidden
+/************************
+ * Accounts definitions *
+ ************************/
 
-# If you want to do budget planning for you project, you need to
-# define some accounts.
+# TODO Check how to use that to handle the various amount we could receive, and how we handle them
 account cost "Project Cost" {
   account dev "Development"
 }
-account rev "Customer Payments"
+account fundraised_account "Fundraising"
+balance cost fundraised_account
 
-# The Profit&Loss analysis should be rev - cost accounts.
-# Public holidays here.
+
+/**************************
+ * Ressources definitions *
+ **************************/
+
+# Public holidays.
 vacation "New Year's Day" 2013-01-01
-
-# The daily default rate of all resources. This can be overridden for each
-# resource. We specify this, so that we can do a good calculation of
-# the costs of the project.
-rate 150.0
+rate 150.0 # Default daily rate
 
 resource team "Pitivi team" {
   resource thibault  "Thibault Saunier" {
     email "tsaunier@gnome.org"
+    rate 170.0
   }
 
   resource mathieu "Mathieu duponchelle" {
@@ -74,38 +84,36 @@ resource team "Pitivi team" {
   }
 }
 
-macro allocate_developers [
-  allocate mathieu
-  allocate thibault
-]
+/***********************
+ * Project definition  *
+ ***********************/
+task project ${fullname} {
+  chargeset dev
 
-balance cost rev
-
-task project "Ptivi" {
   task wp1 "Work Package 1: Bug fixing and Q&A" {
     task t1 "Maintain and enhance our intergration tests for the multimedia stack" {
-      allocate thibault
-      effort 20d
+      ${allocate_thib}
+      effort 30d
     }
     task t2 "Bug fixing" {
 
       task t1 "in GnonLin" {
-        allocate thibault, mathieu
+        ${allocate_devs}
         effort 10d
       }
 
       task t2 "in Gstreamer core and its plugins" {
-        allocate thibault, mathieu
+        ${allocate_devs}
         effort 20d
       }
 
-      task t3 "in GSTreamer Editing Services" {
-        allocate thibault, mathieu
+      task t3 "in GStreamer Editing Services" {
+        ${allocate_devs}
         effort 10d
       }
 
       task t4 "in PiTiVi" {
-        allocate thibault, mathieu,  jeff
+        ${allocate_all}
         effort 15d
       }
     }
@@ -117,12 +125,12 @@ task project "Ptivi" {
 
       task t1 "Reimplement video transformation"{
         depends !!t2
-        allocate thibault, mathieu,  jeff
+        ${allocate_all}
         effort 10d
       }
 
       task t2 "Reimplement undo redo" {
-        allocate thibault
+        ${allocate_thib}
         effort 4d
       }
     }
@@ -136,11 +144,6 @@ task project "Ptivi" {
   task deliveries "Deliveries" {
     task "Stable working 1.0 Pitivi version" {
       depends !!wp1
-
-      # Some milestones have customer payments associated with them. We
-      # credit these payments to the 'rev' account.
-      purge chargeset
-      chargeset rev
     }
     task "Performant, and feature 2.0 Pitivi version" {
       depends !!wp2
@@ -148,217 +151,9 @@ task project "Ptivi" {
   }
 }
 
-# Now the project has been specified completely. Stopping here would
-# result in a valid TaskJuggler file that could be processed and
-# scheduled. But no reports would be generated to visualize the
-# results.
 
-navigator navbar {
-  hidereport 0
-}
-
-macro TaskTip [
-  tooltip istask() -8<-
-    '''Start: ''' <-query attribute='start'->
-    '''End: ''' <-query attribute='end'->
-    ----
-    '''Resources:'''
-
-    <-query attribute='resources'->
-    ----
-    '''Precursors: '''
-
-    <-query attribute='precursors'->
-    ----
-    '''Followers: '''
-
-    <-query attribute='followers'->
-    ->8-
-]
-
-textreport frame "" {
-  header -8<-
-    == Pitivi: to the next level ==
-    <[navigator id="navbar"]>
-  ->8-
-  footer "----"
-  textreport index "Overview" {
-    formats html
-    center '<[report id="overview"]>'
-  }
-
-  textreport "Status" {
-    formats html
-    center -8<-
-      <[report id="status.dashboard"]>
-      ----
-      <[report id="status.completed"]>
-      ----
-      <[report id="status.ongoing"]>
-      ----
-      <[report id="status.future"]>
-    ->8-
-  }
-
-  textreport wps "Work packages" {
-    textreport wp1 "Work package 1" {
-      formats html
-      center '<[report id="wp1"]>'
-    }
-
-    textreport wp2 "Work package 2" {
-      formats html
-      center '<[report id="wp2"]>'
-    }
-  }
-
-  textreport "Deliveries" {
-    formats html
-    center '<[report id="deliveries"]>'
-  }
-
-  textreport "ContactList" {
-    formats html
-    title "Contact List"
-    center '<[report id="contactList"]>'
-  }
-  textreport "ResourceGraph" {
-    formats html
-    title "Resource Graph"
-    center '<[report id="resourceGraph"]>'
-  }
-}
-
-# A traditional Gantt chart with a project overview.
-taskreport overview "" {
-  header -8<-
-    === Project Overview ===
-
-    The project is structured into 2 work packages.
-
-    # Specification
-    # <-reportlink id='frame.wps.wp1'->
-    # <-reportlink id='frame.wps.wp2'->
-    # Testing
-
-    === Original Project Plan ===
-  ->8-
-  columns bsi { title 'WBS' },
-          name, start, end, effort, cost,
-          revenue, chart { ${TaskTip} }
-  # For this report we like to have the abbreviated weekday in front
-  # of the date. %a is the tag for this.
-  timeformat "%a %Y-%m-%d"
-  loadunit days
-  hideresource 1
-  balance cost rev
-  caption 'All effort values are in man days.'
-
-  footer -8<-
-    === Staffing ===
-
-    All project phases are properly staffed. See [[ResourceGraph]] for
-    detailed resource allocations.
-
-    === Current Status ===
-
-    Some blurb about the current situation.
-  ->8-
-}
-
-# Macro to set the background color of a cell according to the alert
-# level of the task.
-macro AlertColor [
-  cellcolor plan.alert = 0 "#00D000" # green
-  cellcolor plan.alert = 1 "#D0D000" # yellow
-  cellcolor plan.alert = 2 "#D00000" # red
-]
-
-taskreport status "" {
-  columns bsi { width 50 title 'WBS' }, name { width 150 },
-          start { width 100 }, end { width 100 },
-          effort { width 100 },
-          alert { tooltip plan.journal
-                          != '' "<-query attribute='journal'->" width 150 },
-          status { width 150 }
-
-  taskreport dashboard "" {
-    headline "Project Dashboard (<-query attribute='now'->)"
-    columns name { title "Task" ${AlertColor} width 200},
-            resources { width 200 ${AlertColor}
-                        listtype bullets
-                        listitem "<-query attribute='name'->"
-                        start ${projectstart} end ${projectend} },
-            alerttrend { title "Trend" ${AlertColor} width 50 },
-            journal { width 350 ${AlertColor} }
-    journalmode status_up
-    journalattributes headline, author, date, summary, details
-    hidetask ~hasalert(0)
-    sorttasks alert.down, plan.end.up
-    period %{${now} - 1w} +1w
-  }
-  taskreport completed "" {
-    headline "Already completed tasks"
-    hidetask ~(plan.end <= ${now})
-  }
-  taskreport ongoing "" {
-    headline "Ongoing tasks"
-    hidetask ~((plan.start <= ${now}) & (plan.end > ${now}))
-  }
-  taskreport future "" {
-    headline "Future tasks"
-    hidetask ~(plan.start > ${now})
-  }
-}
-
-# A list of tasks showing the resources assigned to each task.
-taskreport wp1 "" {
-  headline "Work package 1 - Resource Allocation Report"
-  columns bsi { title 'WBS' }, name, start, end, effort { title "Work" },
-          duration, chart { ${TaskTip} scale day width 500 }
-  timeformat "%Y-%m-%d"
-  hideresource ~(isleaf() & isleaf_())
-  sortresources name.up
-  taskroot project.wp1
-}
-# A list of tasks showing the resources assigned to each task.
-taskreport wp2 "" {
-  headline "Work package 2 - Resource Allocation Report"
-  columns bsi { title 'WBS' }, name, start, end, effort { title "Work" },
-          duration, chart { ${TaskTip} scale day width 500 }
-  timeformat "%Y-%m-%d"
-  hideresource ~(isleaf() & isleaf_())
-  sortresources name.up
-  taskroot project.wp2
-}
-
-# A list of all tasks with the percentage completed for each task
-taskreport deliveries "" {
-  headline "Project Deliverables"
-  columns bsi { title 'WBS' }, name, start, end, note { width 150 }, complete,
-          chart { ${TaskTip} }
-  taskroot project.deliveries
-  hideresource 1
-}
-# A list of all employees with their contact details.
-resourcereport contactList "" {
-  headline "Contact list and duty plan"
-  columns name,
-          email { celltext 1 "[mailto:<-email-> <-email->]" },
-          managers { title "Manager" },
-          chart { scale day }
-  sortresources name.up
-  hidetask 1
-}
-
-# A graph showing resource allocation. It identifies whether each
-# resource is under- or over-allocated for.
-resourcereport resourceGraph "" {
-  headline "Resource Allocation Graph"
-  columns no, name, effort, rate, weekly { ${TaskTip} }
-  loadunit shortauto
-  # We only like to show leaf tasks for leaf resources.
-  hidetask ~(isleaf() & isleaf_())
-  sorttasks plan.start.up
-}
-
+/*********************************
+ * Now teach how to render that! *
+ ********************************/
+include "reports.tji"
+tagfile "tags"
