@@ -1,7 +1,5 @@
 /*
- * This file conta
- * TaskJuggler project management tool. You can use this as a basis to
- * start you own project file.
+ * This file contains the project scehdule for the funraising project from the pitivi team
  */
 project pitivifundraising "Pitivi fundraising"  2014-01-01-0:00--0500 +4m {
   # Set the default time zone for the project. If not specified, UTC
@@ -23,9 +21,9 @@ project pitivifundraising "Pitivi fundraising"  2014-01-01-0:00--0500 +4m {
   currency "Euro"
 
   # You can define multiple scenarios here if you need them.
-  #scenario plan "Plan" {
-  #  scenario actual "Actual"
-  #}
+  scenario plan "Plan" {
+    scenario actual "Actual"
+  }
 
   # You can define your own attributes for tasks and resources. This
   # is handy to capture additonal information about the project that
@@ -90,20 +88,38 @@ resource team "Pitivi team" {
   resource jeff "Jean Francois Fortin-tam" {
     #email #FIXME
   }
-
-  # flags team FIXME
 }
+
+macro allocate_developers [
+  allocate mathieu
+  allocate thibault
+]
 
 task project "Ptivi" {
   task wp1 "Work Package 1: Bug fixing and Q&A" {
-    task t11 "Bug fixing: GnonLin + Gstreamer + GSTreamer Editing Services"
-    task t12 "Maintain and enhance our intergration tests for the multimedia stack"
-    task t13 "Reimplement regressions" {
-      task t131 "Reimplement video transformation"
-      task t132 "Reimplement undo redo"
+    task t1 "Bug fixing: GnonLin + Gstreamer + GSTreamer Editing Services" {
+      ${allocate_developers}
+      effort 60d
     }
+    task t2 "Maintain and enhance our intergration tests for the multimedia stack" {
+      allocate thibault
+      effort 20d
+    }
+    task t3 "Reimplement regressions" {
 
+      task t1 "Reimplement video transformation"{
+        depends !!t2
+        allocate thibault, mathieu,  jeff
+        effort 10d
+      }
+
+      task t2 "Reimplement undo redo" {
+        allocate thibault
+        effort 4d
+      }
+    }
   }
+
   task wp2 "Work Package 2: Features development and performance fixes" {
     depends !wp1
     task t1 "Task 1"
