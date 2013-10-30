@@ -1,0 +1,48 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Chris Schlaeger <chris@linux.com>	//
+!_TAG_PROGRAM_NAME	TaskJuggler	//
+!_TAG_PROGRAM_URL	http://www.taskjuggler.org	/official site/
+!_TAG_PROGRAM_VERSION	3.5.0	//
+contactList	planning/reports.tji	194;"	p
+deliveries	planning/reports.tji	186;"	p
+frame	planning/reports.tji	29;"	p
+frame.index	planning/reports.tji	35;"	p
+frame.report3	planning/reports.tji	40;"	p
+frame.report7	planning/reports.tji	65;"	p
+frame.report8	planning/reports.tji	70;"	p
+frame.report9	planning/reports.tji	75;"	p
+frame.wps	planning/reports.tji	53;"	p
+frame.wps.wp1	planning/reports.tji	54;"	p
+frame.wps.wp2	planning/reports.tji	59;"	p
+jeff	planning/pitivi_fundraising_planning.tjp	64;"	r
+mathieu	planning/pitivi_fundraising_planning.tjp	60;"	r
+overview	planning/reports.tji	83;"	p
+project	planning/pitivi_fundraising_planning.tjp	71;"	t
+project.deliveries	planning/pitivi_fundraising_planning.tjp	125;"	t
+project.deliveries._Task_16	planning/pitivi_fundraising_planning.tjp	126;"	t
+project.deliveries._Task_17	planning/pitivi_fundraising_planning.tjp	129;"	t
+project.wp1	planning/pitivi_fundraising_planning.tjp	74;"	t
+project.wp1.t1	planning/pitivi_fundraising_planning.tjp	75;"	t
+project.wp1.t2	planning/pitivi_fundraising_planning.tjp	79;"	t
+project.wp1.t2.t1	planning/pitivi_fundraising_planning.tjp	81;"	t
+project.wp1.t2.t2	planning/pitivi_fundraising_planning.tjp	86;"	t
+project.wp1.t2.t3	planning/pitivi_fundraising_planning.tjp	91;"	t
+project.wp1.t2.t4	planning/pitivi_fundraising_planning.tjp	96;"	t
+project.wp1.t3	planning/pitivi_fundraising_planning.tjp	102;"	t
+project.wp1.t3.t1	planning/pitivi_fundraising_planning.tjp	107;"	t
+project.wp1.t3.t2	planning/pitivi_fundraising_planning.tjp	113;"	t
+project.wp2	planning/pitivi_fundraising_planning.tjp	120;"	t
+project.wp2.t1	planning/pitivi_fundraising_planning.tjp	122;"	t
+project.wp2.t2	planning/pitivi_fundraising_planning.tjp	123;"	t
+report21	planning/pitivi_fundraising_planning.tjp	137;"	p
+resourceGraph	planning/reports.tji	206;"	p
+status	planning/reports.tji	127;"	p
+status.completed	planning/reports.tji	150;"	p
+status.dashboard	planning/reports.tji	135;"	p
+status.future	planning/reports.tji	158;"	p
+status.ongoing	planning/reports.tji	154;"	p
+team	planning/pitivi_fundraising_planning.tjp	55;"	r
+thibault	planning/pitivi_fundraising_planning.tjp	56;"	r
+wp1	planning/reports.tji	165;"	p
+wp2	planning/reports.tji	175;"	p
