@@ -9,6 +9,9 @@
 
 macro name ["pitivi.fundraising"]
 macro fullname ["Pitivi: Open source video edition to the next level"]
+macro wp1name ["Work Package 1: Bug fixing and Q&A"]
+macro wp2name ["Work Package 2: Features development and performance fixes"]
+
 macro allocate_devs    [allocate mathieu, thibault]
 macro allocate_all     [allocate mathieu, jeff, thibault]
 macro allocate_market  [allocate jeff]
@@ -90,8 +93,8 @@ resource team "Pitivi team" {
 task project ${fullname} {
   chargeset dev
 
-  task wp1 "Work Package 1: Bug fixing and Q&A" {
-    task t1 "Maintain and enhance our intergration tests for the multimedia stack" {
+  task wp1 ${wp1name} {
+    task t1 "Maintain and enhance our intergration infrastucture the multimedia stack" {
       ${allocate_thib}
       effort 30d
     }
@@ -136,7 +139,7 @@ task project ${fullname} {
     }
   }
 
-  task wp2 "Work Package 2: Features development and performance fixes" {
+  task wp2 ${wp2name} {
     depends !wp1
     task t1 "Task 1"
     task t2 "Task 2"
@@ -145,7 +148,7 @@ task project ${fullname} {
     task "Stable working 1.0 Pitivi version" {
       depends !!wp1
     }
-    task "Performant, and feature 2.0 Pitivi version" {
+    task "Performant, and featurefull 2.0 Pitivi version" {
       depends !!wp2
     }
   }
