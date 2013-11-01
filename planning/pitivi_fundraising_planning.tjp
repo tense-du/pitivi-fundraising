@@ -12,13 +12,20 @@ macro fullname ["Pitivi: Open source video edition to the next level"]
 macro wp1name ["Work Package 1: Bug fixing and Q&A"]
 macro wp2name ["Work Package 2: Features development and performance fixes"]
 
-macro allocate_devs    [allocate mathieu, thibault]
-macro allocate_all     [allocate mathieu, jeff, thibault]
-macro allocate_market  [allocate jeff]
-macro allocate_design  [allocate jeff]
-macro allocate_jeff    [allocate jeff]
-macro allocate_mathieu [allocate mathieu]
-macro allocate_thib    [allocate thibault]
+macro allocate_devs    [allocate mathieu, thibault
+                        flags mathieu, thibault]
+macro allocate_all     [allocate mathieu, jeff, thibault
+                        flags mathieu, jeff, thibault]
+macro allocate_market  [allocate jeff
+                        flags jeff]
+macro allocate_design  [allocate jeff
+                        flags jeff]
+macro allocate_jeff    [allocate jeff
+                        flags jeff]
+macro allocate_mathieu [allocate mathieu
+                        flags mathieu]
+macro allocate_thib    [allocate thibault
+                        flags thibault]
 
 /****************************
  *  Main project definition *
@@ -52,6 +59,10 @@ flags docs
 flags important
 flags hidden
 
+flags thibault
+flags mathieu
+flags jeff
+
 /************************
  * Accounts definitions *
  ************************/
@@ -79,11 +90,11 @@ resource team "Pitivi team" {
   }
 
   resource mathieu "Mathieu duponchelle" {
-    #email #FIXME
+    email "mduponchelle1@gmail.com"
   }
 
   resource jeff "Jean Francois Fortin-tam" {
-    #email #FIXME
+    email "nekohayo@gmail.com"
   }
 }
 

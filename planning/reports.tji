@@ -210,3 +210,21 @@ resourcereport resourceGraph "" {
   sorttasks plan.start.up
 }
 
+icalreport "mathieu-calendar.ics" {
+  hidetask (~mathieu)
+  scenario minimal
+}
+
+icalreport "thibault-calendar.ics" {
+  hidetask (~thibault)
+  scenario minimal
+}
+
+icalreport "jeff-calendar.ics" {
+  hidetask (~jeff)
+  scenario minimal
+}
+
+icalreport "all-calendar.ics" {
+  scenario minimal
+}
