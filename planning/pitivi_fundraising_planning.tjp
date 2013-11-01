@@ -9,8 +9,8 @@
 
 macro name ["pitivi.fundraising"]
 macro fullname ["Pitivi: Open source video edition to the next level"]
-macro wp1name ["Work Package 1: Bug fixing and Q&A"]
-macro wp2name ["Work Package 2: Features development and performance fixes"]
+macro wp1name ["Work Package 1: Bug fixing and Quality Assurance"]
+macro wp2name ["Work Package 2: Feature development and performance fixes"]
 
 macro allocate_devs    [allocate mathieu, thibault
                         flags mathieu, thibault]
@@ -105,14 +105,14 @@ task project ${fullname} {
   chargeset dev
 
   task wp1 ${wp1name} {
-    task qa_infrastucture "Maintain and enhance our intergration infrastucture for the multimedia stack" {
+    task qa_infrastucture "Maintain and enhance our integration infrastucture for the multimedia stack" {
       ${allocate_thib}
       effort 30d
     }
 
-    task ReimplementRegressions "Reimplement regressions from the 0.15 serie" {
+    task ReimplementRegressions "Reimplement regressions from the 0.15 series" {
       # There are a few features we had in the 0.15 serie that are not back
-      # yet we should make sure that everything that was preset at that time is here in 1.0" {
+      # yet, we should make sure that everything that was present at that time is here in 1.0" {
       # FIXME Check why the generated html does not work! https://github.com/taskjuggler/TaskJuggler/issues/124
 
       task transformation_box "Reimplement the video transformation box" {
@@ -131,20 +131,20 @@ task project ${fullname} {
       }
     }
 
-    task BugFixing "Bug fixing, This is not linear tasks as represented here, but at contrary it will be iterative" {
-      task manual_testing "Test pitivi manually and fill more bugs" {
+    task BugFixing "Bug fixing, These are not linear tasks as represented here, but an iterative process" {
+      task manual_testing "Test pitivi manually and file more bugs" {
         ${allocate_jeff}
         effort 22d
       }
 
       task fix_gnl "Fix GnonLin" {
         ${allocate_devs}
-        effort 22d
+        effort 12d
       }
 
       task fix_gst "Fix Gstreamer core and its plugins" {
         ${allocate_devs}
-        effort 22d
+        effort 32d
       }
 
       task fix_ges "Fix GStreamer Editing Services" {
@@ -158,9 +158,9 @@ task project ${fullname} {
       }
     }
 
-    task Documentation "Update documentation and example for GES and Pitivi " {
+    task Documentation "Update documentation and examples for GES and Pitivi " {
       priority 10
-      task pitivi "Update the user manual with latest feature and all" {
+      task pitivi "Update the user manual with the latest features and changes" {
         ${allocate_jeff}
         effort 5d
       }
@@ -200,7 +200,7 @@ task project ${fullname} {
         effort 15d
       }
 
-      task release "Release 1.0 \o/" {
+      task release "Release 1.0 \o/ \o/ \o/" {
         depends !fix_bugs_found
         ${allocate_all}
         effort 1d
@@ -210,7 +210,7 @@ task project ${fullname} {
 
   task wp2 ${wp2name} {
     depends !wp1
-    task t1 "Profile the and fix any 'low hanging' major performance issue" {
+    task t1 "Profile and fix any 'low hanging' major performance issue" {
     }
     task t2 "Task 2"
   }
@@ -219,7 +219,7 @@ task project ${fullname} {
     task "Stable working 1.0 Pitivi version" {
       depends !!wp1
     }
-    task "Performant, and featurefull 2.0 Pitivi version" {
+    task "Performant, and featureful 2.0 Pitivi version" {
       depends !!wp2
     }
   }
