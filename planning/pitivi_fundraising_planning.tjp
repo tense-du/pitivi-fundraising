@@ -23,7 +23,7 @@ macro allocate_thib    [allocate mathieu]
 /****************************
  *  Main project definition *
  ****************************/
-project ${name} ${fullname}  2014-01-01-0:00--0500 +4m {
+project ${name} ${fullname}  2014-01-01-0:00--0500 +12m {
   timezone "Europe/Paris"
   timeformat "%Y-%m-%d"
   numberformat "-" "" "," "." 1    # Use US format for numbers
@@ -94,13 +94,14 @@ task project ${fullname} {
   chargeset dev
 
   task wp1 ${wp1name} {
-    task t1 "Maintain and enhance our intergration infrastucture the multimedia stack" {
+    task t1 "Maintain and enhance our intergration infrastucture for the multimedia stack" {
       ${allocate_thib}
       effort 30d
     }
-    task t2 "Bug fixing" {
 
+    task t2 "Bug fixing, This is not linear tasks as represented here, but at contrary it will be iterative" {
       task t1 "in GnonLin" {
+        depends !!!wp1.t1
         ${allocate_devs}
         effort 10d
       }
@@ -127,7 +128,6 @@ task project ${fullname} {
             in 1.0"
 
       task t1 "Reimplement video transformation"{
-        depends !!t2
         ${allocate_all}
         effort 10d
       }
@@ -144,6 +144,7 @@ task project ${fullname} {
     task t1 "Task 1"
     task t2 "Task 2"
   }
+
   task deliveries "Deliveries" {
     task "Stable working 1.0 Pitivi version" {
       depends !!wp1
