@@ -212,19 +212,19 @@ resourcereport resourceGraph "" {
 
 icalreport "mathieu-calendar.ics" {
   hidetask (~mathieu)
-  scenario minimal
+  scenario actual
 }
 
 icalreport "thibault-calendar.ics" {
   hidetask (~thibault)
-  scenario minimal
+  scenario actual
 }
 
 icalreport "jeff-calendar.ics" {
   hidetask (~jeff)
-  scenario minimal
+  scenario actual
 }
 
 icalreport "all-calendar.ics" {
-  scenario minimal
+  scenario actual
 }
