@@ -105,9 +105,30 @@ task project ${fullname} {
   chargeset dev
 
   task wp1 ${wp1name} {
-    task t1 "Maintain and enhance our intergration infrastucture for the multimedia stack" {
+    task qa_infrastucture "Maintain and enhance our intergration infrastucture for the multimedia stack" {
       ${allocate_thib}
       effort 30d
+    }
+
+    task ReimplementRegressions "Reimplement regressions from the 0.15 serie" {
+      # There are a few features we had in the 0.15 serie that are not back
+      # yet we should make sure that everything that was preset at that time is here in 1.0" {
+      # FIXME Check why the generated html does not work! https://github.com/taskjuggler/TaskJuggler/issues/124
+
+      task transformation_box "Reimplement the video transformation box" {
+        ${allocate_devs}
+        effort 10d
+      }
+
+      task undo_redo "Reimplement undo redo" {
+        ${allocate_devs}
+        effort 4d
+      }
+
+      task auto_alignment "Reimplement auto alignment feature" {
+        ${allocate_devs}
+        effort 8d
+      }
     }
 
     task BugFixing "Bug fixing, This is not linear tasks as represented here, but at contrary it will be iterative" {
@@ -117,7 +138,6 @@ task project ${fullname} {
       }
 
       task fix_gnl "Fix GnonLin" {
-        depends !!!wp1.t1
         ${allocate_devs}
         effort 22d
       }
@@ -138,22 +158,29 @@ task project ${fullname} {
       }
     }
 
-    task ReimplementRegressions "Reimplement regressions from the 0.15 serie" {
-      # There are a few features we had in the 0.15 serie that are not back
-      # yet we should make sure that everything that was preset at that time is here in 1.0" {
-      # FIXME Check why the generated html does not work! https://github.com/taskjuggler/TaskJuggler/issues/124
-
-      task transformation_box "Reimplement the video transformation box" {
-        ${allocate_devs}
-        effort 10d
+    task Documentation "Update documentation and example for GES and Pitivi " {
+      priority 10
+      task pitivi "Update the user manual with latest feature and all" {
+        ${allocate_jeff}
+        effort 5d
       }
 
-      task undo_redo "Reimplement undo redo" {
+      task write_pitivi_tutorials "Write pitivi tutorials" {
         ${allocate_devs}
-        effort 4d
+        effort 5d
       }
 
-      task auto_alignment "Reimplement auto alignment feature" {
+      task cleanup_ges_api_documentation "Clean and update GES API documentation" {
+        ${allocate_devs}
+        effort 3d
+      }
+
+      task update_ges_examples "Update and clean GES examples" {
+        ${allocate_devs}
+        effort 5d
+      }
+
+      task write_ges_tutorials "Write simple GES tutorials" {
         ${allocate_devs}
         effort 5d
       }
@@ -161,18 +188,20 @@ task project ${fullname} {
 
     task Release_1_0 "Release Pitivi 1.0" {
 
-      depends !!wp1.ReimplementRegressions
+      depends !!wp1.Documentation
       task pre_release "Release 0.99" {
         ${allocate_jeff}
         effort 1d
       }
 
-      task fix_bug_found "Fix remaining bugs found by the community in 0.99" {
+      task fix_bugs_found "Fix remaining bugs found by the community in 0.99" {
+        depends !pre_release
         ${allocate_all}
         effort 15d
       }
 
       task release "Release 1.0 \o/" {
+        depends !fix_bugs_found
         ${allocate_all}
         effort 1d
       }
@@ -181,7 +210,8 @@ task project ${fullname} {
 
   task wp2 ${wp2name} {
     depends !wp1
-    task t1 "Task 1"
+    task t1 "Profile the and fix any 'low hanging' major performance issue" {
+    }
     task t2 "Task 2"
   }
 
