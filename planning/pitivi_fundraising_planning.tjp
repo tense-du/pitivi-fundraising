@@ -99,42 +99,71 @@ task project ${fullname} {
       effort 30d
     }
 
-    task t2 "Bug fixing, This is not linear tasks as represented here, but at contrary it will be iterative" {
-      task t1 "in GnonLin" {
+    task BugFixing "Bug fixing, This is not linear tasks as represented here, but at contrary it will be iterative" {
+      task manual_testing "Test pitivi manually and fill more bugs" {
+        ${allocate_jeff}
+        effort 22d
+      }
+
+      task fix_gnl "Fix GnonLin" {
         depends !!!wp1.t1
         ${allocate_devs}
-        effort 10d
+        effort 22d
       }
 
-      task t2 "in Gstreamer core and its plugins" {
+      task fix_gst "Fix Gstreamer core and its plugins" {
         ${allocate_devs}
-        effort 20d
+        effort 22d
       }
 
-      task t3 "in GStreamer Editing Services" {
+      task fix_ges "Fix GStreamer Editing Services" {
         ${allocate_devs}
-        effort 10d
+        effort 22d
       }
 
-      task t4 "in PiTiVi" {
+      task fix_pitivi "Fix PiTiVi" {
         ${allocate_all}
-        effort 15d
+        effort 12d
       }
     }
 
-    task t3 "Reimplement regressions from the 0.15 serie" {
-      note "There are a few features we had in the 0.15 serie that are not back yet
-            we should make sure that everything that was preset at that time is here
-            in 1.0"
+    task ReimplementRegressions "Reimplement regressions from the 0.15 serie" {
+      # There are a few features we had in the 0.15 serie that are not back
+      # yet we should make sure that everything that was preset at that time is here in 1.0" {
+      # FIXME Check why the generated html does not work! https://github.com/taskjuggler/TaskJuggler/issues/124
 
-      task t1 "Reimplement video transformation"{
-        ${allocate_all}
+      task transformation_box "Reimplement the video transformation box" {
+        ${allocate_devs}
         effort 10d
       }
 
-      task t2 "Reimplement undo redo" {
-        ${allocate_thib}
+      task undo_redo "Reimplement undo redo" {
+        ${allocate_devs}
         effort 4d
+      }
+
+      task auto_alignment "Reimplement auto alignment feature" {
+        ${allocate_devs}
+        effort 5d
+      }
+    }
+
+    task Release_1_0 "Release Pitivi 1.0" {
+
+      depends !!wp1.ReimplementRegressions
+      task pre_release "Release 0.99" {
+        ${allocate_jeff}
+        effort 1d
+      }
+
+      task fix_bug_found "Fix remaining bugs found by the community in 0.99" {
+        ${allocate_all}
+        effort 15d
+      }
+
+      task release "Release 1.0 \o/" {
+        ${allocate_all}
+        effort 1d
       }
     }
   }
