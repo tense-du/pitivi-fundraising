@@ -105,9 +105,16 @@ task project ${fullname} {
   chargeset dev
 
   task wp1 ${wp1name} {
-    task qa_infrastucture "Maintain and enhance our integration infrastucture for the multimedia stack" {
+    task qa_infrastucture "Maintain and enhance our Quality Assurance infrastucture" {
       ${allocate_thib}
       effort 30d
+
+      # TODO Port all our integration tests to ges-project-launcher
+      # TODO Properly setup dogtails test
+      # TODO Find a real hosting server
+        # QUESTION: Propose some hosting service to get people's broken projects so we can fix them, and integrate them in our QA tool?
+      #
+      # => effort + N ?
     }
 
     task ReimplementRegressions "Reimplement regressions from the 0.15 series" {
@@ -131,7 +138,7 @@ task project ${fullname} {
       }
     }
 
-    task BugFixing "Bug fixing, These are not linear tasks as represented here, but an iterative process" {
+    task BugFixing "Bug fixing, (represented linearly but it is actually very iterative)" {
       task manual_testing "Test pitivi manually and file more bugs" {
         ${allocate_jeff}
         effort 22d
@@ -150,6 +157,11 @@ task project ${fullname} {
       task fix_ges "Fix GStreamer Editing Services" {
         ${allocate_devs}
         effort 22d
+      }
+
+      task fix_pitivi_dogtails "Fix and enhance Pitivi Dogtail tests" {
+        ${allocate_all}
+        effort 12d
       }
 
       task fix_pitivi "Fix PiTiVi" {
