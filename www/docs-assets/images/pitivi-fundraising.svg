@@ -15,7 +15,10 @@
    id="svg3590"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="pitivi-fundraising.svg">
+   sodipodi:docname="pitivi-fundraising.svg"
+   inkscape:export-filename="/home/thiblahute/Dropbox/Documents/travail/pitivi/pitivi-fundraising/www/docs-assets/images/pitivi-fundraising.png"
+   inkscape:export-xdpi="162.40602"
+   inkscape:export-ydpi="162.40602">
   <defs
      id="defs3592">
     <radialGradient
@@ -183,6 +186,60 @@
        y1="148.9644"
        x2="483.70261"
        y2="104.81464" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3383-6"
+       id="linearGradient3191"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.1533086,0,0,1.1533087,-131.09964,-17.615716)"
+       x1="479.21826"
+       y1="148.9644"
+       x2="483.70261"
+       y2="104.81464" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5501-9"
+       id="radialGradient3192"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.976115,0.00123608,-1.888397e-4,0.130952,0.567418,37.76785)"
+       cx="23.413918"
+       cy="43.282089"
+       fx="23.413918"
+       fy="43.282089"
+       r="22.273863" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5501-9"
+       id="radialGradient3194"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.976115,0.00123608,-1.888397e-4,0.130952,0.567418,37.76785)"
+       cx="23.413918"
+       cy="43.282089"
+       fx="23.413918"
+       fy="43.282089"
+       r="22.273863" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4755-0"
+       id="radialGradient3196"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.74005,-1.271033e-8,6.801607e-7,0.189525,5.047392,7.702356)"
+       cx="9.7811804"
+       cy="38.420067"
+       fx="9.7811804"
+       fy="38.420067"
+       r="21.020655" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4735-7"
+       id="radialGradient3198"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.464342,0.03571614,-0.01852372,0.758963,-4.584824,6.809718)"
+       cx="10.536296"
+       cy="25.999708"
+       fx="10.536296"
+       fy="25.999708"
+       r="20.999186" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -191,9 +248,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="674.02368"
-     inkscape:cy="176.07747"
+     inkscape:zoom="0.905"
+     inkscape:cx="822.22352"
+     inkscape:cy="12.883653"
      inkscape:document-units="px"
      inkscape:current-layer="svg3590"
      showgrid="false"
@@ -210,7 +267,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -228,7 +285,7 @@
      style="display:inline"
      inkscape:label="Layer 1"
      id="g2502"
-     transform="matrix(2.5611303,0,0,2.789802,234.70455,58.05231)">
+     transform="matrix(2.5611303,0,0,2.789802,194.70455,58.05231)">
     <path
        transform="matrix(0.538748,0,0,0.857097,22.76191,8.222984)"
        d="m 46.845823,43.492195 c 0,1.610913 -9.972348,2.916816 -22.273863,2.916816 -12.301514,0 -22.2738624,-1.305903 -22.2738624,-2.916816 0,-1.610913 9.9723484,-2.916815 22.2738624,-2.916815 12.301515,0 22.273863,1.305902 22.273863,2.916815 z"
@@ -1000,44 +1057,48 @@
      sodipodi:linespacing="100%"
      id="text3115"
      y="156.74561"
-     x="398.83063"
+     x="357.08319"
      style="font-size:83.03822327px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:100%;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:BetecknaLowerCase;-inkscape-font-specification:BetecknaLowerCase"
      xml:space="preserve"><tspan
-       style="font-size:83.03822327px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;font-family:BetecknaLowerCase;-inkscape-font-specification:BetecknaLowerCase"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;font-family:Source Sans Pro;-inkscape-font-specification:Source Sans Pro"
        y="156.74561"
-       x="398.83063"
+       x="357.08319"
        id="tspan3117"
-       sodipodi:role="line">Pitivi <tspan
-   id="tspan3119"
-   style="font-size:19.0627346px">fundraising</tspan></tspan></text>
+       sodipodi:role="line"><tspan
+         style="font-size:100px"
+         id="tspan3193">Pitivi</tspan><tspan
+         style="font-size:50px"
+         id="tspan3197"> fundraising</tspan></tspan></text>
   <text
      transform="scale(0.95814038,1.0436884)"
      sodipodi:linespacing="100%"
      id="text3121"
-     y="156.75732"
-     x="398.85324"
-     style="font-size:83.03822327px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:100%;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;fill:url(#linearGradient3311);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:BetecknaLowerCase;-inkscape-font-specification:BetecknaLowerCase"
+     y="156.53374"
+     x="356.74985"
+     style="font-size:83.03822327px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:100%;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;fill:url(#linearGradient3191);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:BetecknaLowerCase;-inkscape-font-specification:BetecknaLowerCase"
      xml:space="preserve"><tspan
-       style="font-size:83.03822327px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:url(#linearGradient3311);fill-opacity:1;font-family:BetecknaLowerCase;-inkscape-font-specification:BetecknaLowerCase"
-       y="156.75732"
-       x="398.85324"
+       style="font-size:51.5px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:url(#linearGradient3191);fill-opacity:1;font-family:Source Sans Pro;-inkscape-font-specification:Source Sans Pro"
+       y="156.53374"
+       x="356.74985"
        id="tspan3123"
-       sodipodi:role="line">Pitivi <tspan
-   id="tspan3125"
-   style="font-size:19.0627346px;fill:url(#linearGradient3311)">fundraising</tspan></tspan><tspan
+       sodipodi:role="line"><tspan
+         style="font-size:100px;fill:url(#linearGradient3191)"
+         id="tspan3189">Pitivi</tspan><tspan
+         style="font-size:50px;fill:url(#linearGradient3191)"
+         id="tspan3195"> fundraising</tspan></tspan><tspan
        id="tspan3127"
-       style="font-size:36.3924942px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:url(#linearGradient3311);fill-opacity:1;font-family:BetecknaLowerCase;-inkscape-font-specification:BetecknaLowerCase"
-       y="239.79555"
-       x="398.85324"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:url(#linearGradient3191);fill-opacity:1;font-family:Source Sans Pro;-inkscape-font-specification:Source Sans Pro"
+       y="256.53375"
+       x="356.74985"
        sodipodi:role="line" /></text>
   <g
-     transform="matrix(2.5611303,0,0,2.789802,234.70455,58.05231)"
+     transform="matrix(2.5611303,0,0,2.789802,194.70455,58.05231)"
      id="g3129"
      inkscape:label="Layer 1"
      style="display:inline">
     <path
        sodipodi:type="arc"
-       style="opacity:0.2;fill:url(#radialGradient14828-4);fill-opacity:1;stroke:none"
+       style="opacity:0.2;fill:url(#radialGradient3192);fill-opacity:1;stroke:none"
        id="path3131"
        sodipodi:cx="24.57196"
        sodipodi:cy="43.492195"
@@ -1047,7 +1108,7 @@
        transform="matrix(0.538748,0,0,0.857097,22.76191,8.222984)" />
     <path
        sodipodi:type="arc"
-       style="opacity:0.2;fill:url(#radialGradient5507-2);fill-opacity:1;stroke:none"
+       style="opacity:0.2;fill:url(#radialGradient3194);fill-opacity:1;stroke:none"
        id="path3133"
        sodipodi:cx="24.57196"
        sodipodi:cy="43.492195"
@@ -1066,7 +1127,7 @@
          height="6.9678578"
          width="41.041309"
          id="rect3137"
-         style="fill:url(#radialGradient4771-1);fill-opacity:1;stroke:#666863;stroke-width:1.00000083;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+         style="fill:url(#radialGradient3196);fill-opacity:1;stroke:#666863;stroke-width:1.00000083;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
       <path
          inkscape:connector-curvature="0"
          id="path3139"
@@ -1099,7 +1160,7 @@
     </g>
     <path
        inkscape:connector-curvature="0"
-       style="fill:url(#radialGradient4741-7);fill-opacity:1;fill-rule:evenodd;stroke:#767872;stroke-width:1.00000012px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="fill:url(#radialGradient3198);fill-opacity:1;fill-rule:evenodd;stroke:#767872;stroke-width:1.00000012px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 2.4881176,19.543848 0,23 c 0.029811,1.071428 1.1328072,2.142857 2.0211665,1.928571 l 36.8102699,0 c 1.079148,-0.07143 2.229841,-1 2.164258,-1.928571 l 0,-28.928571 -10.96132,0 0,5.928571 -30.0343744,0 z"
        id="path3149"
        sodipodi:nodetypes="ccccccccc" />
