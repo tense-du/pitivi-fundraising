@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website for the 'Pitivi: Bring open source video edition to the next level' fundraising campaign">
+    <meta name="author" content="Thibault Saunier <saunierthibault@gmail.com>">
+    <link rel="shortcut icon" href="/static/docs-assets/ico/pitivi.png">
+
+    <title>Pitivi: bringin open source video edition to the next level</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/dist/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/carousel.css" rel="stylesheet">
+     <link href="/static/css/tjreport.css" rel="stylesheet" type="text/css"></link>
+  </head>
+  <body>
+<!-- NAVBAR
+================================================== -->
+    <div class="navbar-wrapper">
+      <div class="container">
+
+        <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Pitivi fundraising</a>
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="donate">Donate</a></li>
+                <li><a href="about-us">The Pitivi team</a></li>
+                <li><a href="#about">Our ambition</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">technologies<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">GStreamer</a></li>
+                    <li><a href="#">GStreamer Editing Service</li>
+                    <li><a href="#">Pitivi video editor</a></li>
+                  </ul>
+                </li>
+                <li><a href="#contact">Contact</a></li>
+                 <!--FIXME add a metter here? -->
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active">
+          <img align="center" src="/static/docs-assets/images/pitivi-fundraising.png" alt="banner.">
+          <div class="carousel-caption">
+            <div id="page-wrap">
+              <div class="meter orange">
+                  <span style="width: 50%"><b>50000€ raised</b></span> 
+              </div>
+            </div>
+            <p>Please <a href=donate>help us</a> reach our goal:<br>
+              <b>Provide a stable and powerful video editor made by community, usable by everybody</b></p>
+          </div>
+        </div>
+        <div class="item">
+          <img align="center" src="/static/docs-assets/images/pitivi-fundraising.png" alt="banner.">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1></h1>
+              <p>The pitivi project started in 2004, we have been working building the basis for almost 10 years...<br><b>now</b> is time to go wider</p>
+              <p><a class="btn btn-lg btn-primary" href="http://en.wikipedia.org/wiki/Pitivi#History" role="button">Learn more</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img align="center" src="/static/docs-assets/images/pitivi-fundraising.png" alt="banner.">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>One more for good measure.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div><!-- /.carousel -->
+
+    {% block content %}
+    {% endblock %}
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/static/dist/js/bootstrap.min.js"></script>
+    <script src="/static/docs-assets/js/holder.js"></script>
+    <script>
+      $(function() {
+        $(".meter > span").each(function() {
+          $(this)
+            .data("origWidth", $(this).width())
+            .width(0)
+            .animate({
+              width: $(this).data("origWidth")
+            }, 1200);
+        });
+      });
+    </script>
+  </body>
+</html>
