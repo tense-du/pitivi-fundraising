@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block extend_head %}
+
+    <style type="text/css">
+    .animation-size-for-iframe {
+        /* Note that the width and height should match the dimensions of your animation to display correctly */
+        width: 1024px;
+        height: 768px;
+    }
+    iframe {
+        border-width: 0;
+    }
+    </style>
+    <script type="text/javascript" src="/static/gst-animation/embed/senchaAnimatorEmbed.js"></script>
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="container marketing">
+        <div id='manual-animation'></div>
+        <br><br>
+        <iframe id='manual-animation-2' class="animation-size-for-iframe"></iframe>
+    </div>
+    <!-- more sample usage (needs valid paths to work) -->
+    <!-- <div data-sencha-anim-url="path/to/exportFolder"></div> -->
+    <!-- <iframe class="animation-size-for-iframe" data-sencha-anim-url="path/to/exportFolder"></iframe> -->
+
+    <!-- if you want to manually add animations using the sdk you can do the following after the script has been included -->
+    <!-- Usage: AN.PageManager.loadAnimation(elementId/element, relativePathToExportFolder [, config]); -->
+    <script type="text/javascript">
+        var manualAnimationDiv = AN.PageManager.loadAnimation('manual-animation', "../", {
+            onBeforeRun: function(instance, config) {
+                console.log('-------- before run div ---------');
+            },
+            onLoad: function(instance) {
+                console.log('-------- on load div ---------');
+            },
+            onError: function() {
+               console.log('-------- on error div ---------');
+            }
+        });
+        var manualAnimationIframe = AN.PageManager.loadAnimation('manual-animation-2', "../", {
+            onLoad: function(instance) {
+                console.log('-------- on load iframe ---------');
+            },
+            onError: function() {
+                console.log('-------- on error iframe ---------');
+            }
+        });
+    </script>
+{% endblock %}

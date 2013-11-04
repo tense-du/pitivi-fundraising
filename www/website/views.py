@@ -36,3 +36,7 @@ def about_us(request):
 
 def plan(request):
     return render_to_response("planning.html")
+
+
+def gstreamer(request):
+    return render_to_response("gstreamer.html")
