@@ -24,7 +24,6 @@
 # any later version.
 
 from django.shortcuts import render_to_response
-from django.http import HttpResponse
 
 
 def home(request):
@@ -41,3 +40,7 @@ def plan(request):
 
 def gstreamer(request):
     return render_to_response("gstreamer.html")
+
+
+def tech_overview(request):
+    return render_to_response("tech-overview.html")

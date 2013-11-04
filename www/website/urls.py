@@ -4,9 +4,9 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = patterns('',
   url(r'^$', v.home),
-  url(r'^about-us', v.about_us),
   url(r'^the-plan', v.plan),
   url(r'^gstreamer', v.gstreamer),
+  url(r'^tech-overview', v.tech_overview),
 )
 
 urlpatterns += staticfiles_urlpatterns()
