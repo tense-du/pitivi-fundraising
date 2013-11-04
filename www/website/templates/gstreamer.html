@@ -33,9 +33,9 @@
 
       <hr class="featurette-divider">
 
-      <div id='manual-animation'></div>
           <h2 style="align: center" class="featurette-heading">GStreamer: <span class="text-muted"> How does it work, and why is it so great?</h2>
-      <iframe id='manual-animation-2' class="animation-size-for-iframe"></iframe>
+      <div id='manual-animation'></div>
+      <!--<iframe id='manual-animation-2' class="animation-size-for-iframe"></iframe>-->
 
     </div>
     <!-- more sample usage (needs valid paths to work) -->
@@ -45,7 +45,7 @@
     <!-- if you want to manually add animations using the sdk you can do the following after the script has been included -->
     <!-- Usage: AN.PageManager.loadAnimation(elementId/element, relativePathToExportFolder [, config]); -->
     <script type="text/javascript">
-        var manualAnimationDiv = AN.PageManager.loadAnimation('manual-animation', "../", {
+        var manualAnimationDiv = AN.PageManager.loadAnimation('manual-animation', "/static/gst-animation", {
             onBeforeRun: function(instance, config) {
                 console.log('-------- before run div ---------');
             },
@@ -56,7 +56,7 @@
                console.log('-------- on error div ---------');
             }
         });
-        var manualAnimationIframe = AN.PageManager.loadAnimation('manual-animation-2', "../", {
+        var manualAnimationIframe = AN.PageManager.loadAnimation('manual-animation-2', "/static/gst-animation", {
             onLoad: function(instance) {
                 console.log('-------- on load iframe ---------');
             },
