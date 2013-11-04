@@ -7186,3 +7186,6 @@ background-image: -webkit-linear-gradient(#f0a3a3, #f42323);
 background-image: none;
 }
 
+.indent {
+  text-indent: 20px;
+}
