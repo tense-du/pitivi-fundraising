@@ -1,0 +1,22 @@
+# Generate the gant
+
+Install taskjuggler:
+
+```bash
+$sudo gem install taskjuggler
+```
+
+And then
+
+``` bash
+./generate_plan.sh
+```
+
+# Run website
+
+```bash
+# You should first generate the gant chart to have it avalaible
+
+cd www
+./manage.py runserver
+```
