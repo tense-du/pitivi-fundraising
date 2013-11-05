@@ -28,7 +28,11 @@ macro TaskTip [
 
 textreport frame "" {
   header -8<-
-    == [[File:icons/pitivi.png|bottom]] ${fullname} -- Project Plan ==
+    <html>
+        <h1 class="featurette-heading" id="Pitivi_Open_source_video_edition_to_the_next_level__Project_Plan">
+            Pitivi fundraiser: <span class="text-muted">Project Planning</span>
+        </h1>
+    </html>
     <[navigator id="navbar"]>
   ->8-
   footer "----"
