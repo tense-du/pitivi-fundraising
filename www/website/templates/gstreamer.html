@@ -32,18 +32,11 @@
       </div>
 
       <hr class="featurette-divider">
-
           <h2 style="align: center" class="featurette-heading">GStreamer: <span class="text-muted"> How does it work, and why is it so great?</h2>
       <div id='manual-animation'></div>
-      <!--<iframe id='manual-animation-2' class="animation-size-for-iframe"></iframe>-->
 
     </div>
-    <!-- more sample usage (needs valid paths to work) -->
-    <!-- <div data-sencha-anim-url="path/to/exportFolder"></div> -->
-    <!-- <iframe class="animation-size-for-iframe" data-sencha-anim-url="path/to/exportFolder"></iframe> -->
 
-    <!-- if you want to manually add animations using the sdk you can do the following after the script has been included -->
-    <!-- Usage: AN.PageManager.loadAnimation(elementId/element, relativePathToExportFolder [, config]); -->
     <script type="text/javascript">
         var manualAnimationDiv = AN.PageManager.loadAnimation('manual-animation', "/static/gst-animation", {
             onBeforeRun: function(instance, config) {
