@@ -1,38 +1,60 @@
-{% extends "base.html" %}
-
 {% block content %}
 
-<div class="container marketing">
+<div class="jumbotron" style="z-index: 100; text-align: center;">
+  <div id="about-us" class="container" style="max-width: 80%">
+    <h1>Who are we?</h1>
 
-      <div class="row">
-        <div class="col-lg-4">
-          <img class="img-circle" src="https://gravatar.com/avatar/29e17339e91003d23034611843ca1fa9?&s=64&rating=PG&d=https%3a%2f%2fwww.ohloh.net%2fanon80.gif" alt="Generic placeholder image">
-          <h2>Mathieu Duponchelle</h2>
-          <p style="text-align: justified">My name is Mathieu Duponchelle, I am one of the maintainers of Pitivi, an open source video editor built on top of GStreamer, that you might or might not have already heard about.<br>
-          Last October, we released the first version of a major rework of the software, "0.91", the first one since two years.<br>
-          We just released 0.92, which is a bugfix only release, and we now plan to have a tight release schedule, on a monthly basis, focusing on bugs until we deem the software stable enough to be named 1.0.<br><br>
-          I write to you on behalf of the team, because we plan to launch a crowdfunding campaign before the end of the year, and we obviously feel like putting tech / linux news site in the loop is something that should be done as soon as possible. We have many interesting and exciting ideas regarding the campaign, and thought you might want to discuss them with us.<br>
-          If you're interested, we would be happy to arrange hangouts / text interviews / barbecue / whatever and have an interesting chat with you.<br>
-          Please note that we would like to keep that campaign reasonably secret until we launch it, and have faith in your discretion :)
-          </p>
-<!--          <p>We are <a href="https://www.ohloh.net/accounts/Mathieu_Du">Mathieu Duponchelle</a>,-->
-             <!--<a href="https://www.ohloh.net/accounts/thiblahute">Thibault Saunier</a>,-->
-             <!--and <a href="https://www.ohloh.net/accounts/kiddo"> Jean-François Fortin Tam </a>.-->
-             <!--We are the current maintainers of the Pitivi video editor and the <a href="GES"> GStreamer Editing Services.</a></p>-->
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-lg-4">
-          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-lg-4">
-          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
+    <div class="row jumbotron">
+      <div class="col-lg-4">
+        <img class="img-circle" height=140 width=140 src="/static/images/mathieu.jpeg" alt="Generic placeholder image">
+        <h2>Mathieu Duponchelle</h2>
+        <p class="indent" align="justify">
+        Mathieu Duponchelle, Pitivi developer since 2010 is the one who started, the port to the
+        <a href="gstreamer-editing-services">GStreamer Editing Services</a>
+        during the <a href="http://en.wikipedia.org/wiki/Google_Summer_of_Code">Google summer of code </a>
+        (GSoC) 2011.  This work was achieved under Thibault Saunier mentoring. He has been since then
+        very involved in the Pitivi project and is now a core member of the Pitivi community.
+        </p>
+        <!--Would be great to get some positive opinion to link to here!-->
+        <p class="indent" align="justify">
+        In 2013, he worked again as a GSoC student, this time in order to bring the port of Pitivi to GES to a releasable and usable state. Thanks to his
+        hard work and his close collaboration with the GStreamer community, he fixed a ton of bugs in all the components of Pitivi and
+        became a very active member of the GStreamer project as a whole.
+        </p>
       </div>
+
+      <div class="col-lg-4">
+        <img class="img-circle" src="/static/images/thibault.jpeg" alt="Generic placeholder image">
+        <h2>Thibault Saunier</h2>
+        <p class="indent" align="justify">
+        Thibault Saunier joined the PiTiVi project as a Summer of
+        Code student in 2010 and has been hooked ever since. He has been
+        the main developer of the GStreamer Editing Services since 2011,
+        and has been implementing all the feature that were needed by
+        Pitivi but were not yet implemented at the time of the porting.
+        He has been investing a massive amount of his free time making sure
+        that Pitivi was going in the right direction and making sure the
+        GStreamer Editing Services were the solid basis Pitivi needs to
+        fully leverage the power of GStreamer.
+        </p>
+        <!--Would be great to get some positive opinion to link to here!-->
+        <p class="indent" align="justify">
+        Thibault as been working for <a href="http://www.collabora.com/">collabora</a> since
+        2011 on GStreamer itself, and thus has pretty deep knowledge of the inside of the
+        framework. He is <a href="https://www.ohloh.net/p/gstreamer/contributors">one of the 5 main commiters</a>
+        on GStreamer during the last 12 moth.
+        </p>
+      </div>
+      <div class="col-lg-4">
+        <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+        <h2>Jean-Francois Fortin Tam</h2>
+        <p class="indent" align="justify">
+        Please write it :)
+        </p>
+        <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock %}
