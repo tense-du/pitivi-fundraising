@@ -18,44 +18,33 @@
 
 {% block content %}
 
-    <div class="container marketing">
 
-      <div class="row featurette">
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" src="/static/images/Gstreamer-logo.svg" alt="Generic placeholder image">
-        </div>
-        <div class="col-md-7">
-          <h2 class="featurette-heading">GStreamer: <span class="text-muted"> the state of the art open source multimedia framework.</h2>
-          <p>GStreamer is the leading open source multimedia framework for aroud 10 years now. In the last five years it arrives to a level a maturity where it started to bee used as the core multimedia system for major product in the multimedia industry. Many major hardware vendors such as Intel, Samsung, Sony, and many other smaller ones have been and are working hard on making GStreamer the solid framework it is nowadays, integrating and making use of it in their products.</p>
-          <p class="lead"><p>
-        </div>
-      </div>
+<hr id="gst-animation" class="featurette-divider"/>
 
-      <hr class="featurette-divider">
-          <h2 style="align: center" class="featurette-heading">GStreamer: <span class="text-muted"> How does it work, and why is it so great?</h2>
-      <div id='manual-animation'></div>
+<div class="container marketing">
+  <h2 style="align: center" class="featurette-heading">GStreamer: <span class="text-muted"> How does it work, and why is it so great?</h2>
+  <div id='manual-animation'></div>
+</div>
 
-    </div>
-
-    <script type="text/javascript">
-        var manualAnimationDiv = AN.PageManager.loadAnimation('manual-animation', "/static/gst-animation", {
-            onBeforeRun: function(instance, config) {
-                console.log('-------- before run div ---------');
-            },
-            onLoad: function(instance) {
-                console.log('-------- on load div ---------');
-            },
-            onError: function() {
-               console.log('-------- on error div ---------');
-            }
-        });
-        var manualAnimationIframe = AN.PageManager.loadAnimation('manual-animation-2', "/static/gst-animation", {
-            onLoad: function(instance) {
-                console.log('-------- on load iframe ---------');
-            },
-            onError: function() {
-                console.log('-------- on error iframe ---------');
-            }
-        });
-    </script>
+<script type="text/javascript">
+  var manualAnimationDiv = AN.PageManager.loadAnimation('manual-animation', "/static/gst-animation", {
+      onBeforeRun: function(instance, config) {
+          console.log('-------- before run div ---------');
+      },
+      onLoad: function(instance) {
+          console.log('-------- on load div ---------');
+      },
+      onError: function() {
+          console.log('-------- on error div ---------');
+      }
+  });
+  var manualAnimationIframe = AN.PageManager.loadAnimation('manual-animation-2', "/static/gst-animation", {
+      onLoad: function(instance) {
+          console.log('-------- on load iframe ---------');
+      },
+      onError: function() {
+          console.log('-------- on error iframe ---------');
+      }
+  });
+</script>
 {% endblock %}
