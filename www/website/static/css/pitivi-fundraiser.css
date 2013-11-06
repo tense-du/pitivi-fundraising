@@ -1,0 +1,335 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html,
+body {
+
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+html { background-color: rgb(245, 245, 245); }
+body { background-color: white; }
+
+body, h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by its height */
+  margin: 0 auto -100px;
+  /* Pad bottom by footer height */
+  padding: 0px 0 100px;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  min-height: 60px;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.jumbotron {
+  background-color: transparent;
+}
+.stripe {
+  padding: 50px;
+  position: relative;
+}
+.stripe > div {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.stripe > .credit {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 0.7em;
+  padding: 0 10px;
+  color: white;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+}
+/*.container {*/
+  /*width: auto;*/
+  /*max-width: 1200px;*/
+  /*padding: 10px 15px;*/
+/*}*/
+.container .credit {
+  margin: 20px 0;
+}
+.popover {
+  font-size: 0.7em;
+  color: rgb(51, 51, 51);
+  text-shadow: none;
+}
+
+.openphoenux {
+  background-image: url('http://static.neo900.org/openphoenux.png');
+  background-size: auto 100%;
+  background-position: center right;
+  background-repeat: no-repeat;
+}
+
+.featurette.row {
+  padding: 25px 0;
+}
+
+h1 {
+  text-shadow: 0px 0px 20px white, 0px 0px 50px white;
+}
+
+#main {
+  margin-bottom: 0px;
+}
+
+.text-small {
+  font-size: 60%;
+}
+.btn-big {
+  font-size: 140%;
+}
+
+@media (max-width: 700px) {
+  .openphoenux {
+    background-image: none;
+  }
+}
+
+strong[title] {
+  border-bottom: 1px dashed #ddd;
+  cursor: help;
+}
+
+
+#contact {
+  display: none;
+  margin-top: 10px;
+}
+.neo900 {
+  font-weight: bold;
+}
+.modal-footer {
+  margin-top: 0 !important;
+}
+.news-title {
+  display: inline-block;
+}
+.news-date {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+#main {
+  background-color: white;
+  background: -moz-linear-gradient(left, #eeeeee 0%, #ffffff 25%, #ffffff 75%, #eeeeee 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#eeeeee), color-stop(25%,#ffffff), color-stop(75%,#ffffff), color-stop(100%,#eeeeee)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #eeeeee 0%,#ffffff 25%,#ffffff 75%,#eeeeee 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #eeeeee 0%,#ffffff 25%,#ffffff 75%,#eeeeee 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #eeeeee 0%,#ffffff 25%,#ffffff 75%,#eeeeee 100%); /* IE10+ */
+  background: linear-gradient(to right, #eeeeee 0%,#ffffff 25%,#ffffff 75%,#eeeeee 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#eeeeee',GradientType=1 ); /* IE6-9 */
+  box-shadow: 0px 0px 15px #ddd;
+}
+
+#cogIsionFFbtnwrapp, #cogIsionFFbtnwrapp *, #cogIsionFFbtn, #cogIsionFFbtn *, #cogIsionFFtooltip, #cogIsionFFtooltip *, #cogIsionFFwrap, #cogIsionFFwrap *, #cogIsionFFwrap a:hover, #cogIsionFFwrap a:visited, #cogIsionFFwrap a:active {
+  -moz-box-sizing: content-box !important;
+  -ms-box-sizing: content-box !important;
+  -webkit-box-sizing: content-box !important;
+  -o-box-sizing: content-box !important;
+  box-sizing: content-box !important;
+}
+
+.navbar {
+  top: 0px;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  /*opacity: 0.80;*/
+}
+
+.white {
+  color:white;
+}
+
+h2.h1 { text-align: center; }
+.pcb {
+  background-image: url('http://static.neo900.org/pcb.jpg');
+  background-attachment: fixed;
+  background-position: top center;
+  color: white;
+}
+.n900side {
+  background-image: url('http://static.neo900.org/n900side.jpg');
+  background-position: right top;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+.n900side .container {
+  /*background-color: rgba(255,255,255,0.75); */
+}
+.sunrise {
+  background-image: url('/static/images/pitivi-blurred.png');
+  background-attachment: fixed;
+  background-position: top center;
+  color: white;
+}
+.sunrise .container {
+  text-shadow: 0px 0px 40px black, 1px 1px 0px rgba(0,0,0,0.4);
+}
+.pcb .row {
+  padding: 40px 20px;
+  text-shadow: 0px 0px 20px black, 1px 1px 0px rgba(0,0,0,0.4);
+}
+.pcb h2 {
+  padding: 30px;
+  margin: 0 -15px;
+  text-shadow: 0px 0px 40px black, 1px 1px 0px rgba(0,0,0,0.4);
+}
+#faq h2, #faq p {
+  -ms-transition: 2s color;
+  -webkit-transition: 2s color;
+  -moz-transition: 2s color;
+  -o-transition: 2s color;
+  transition: 2s color;
+  margin-top: -70px;
+  padding-top: 70px;
+}
+#faq .target, #faq .target + p {
+  color: red;
+  -ms-transition: 0.2s color;
+  -webkit-transition: 0.2s color;
+  -moz-transition: 0.2s color;
+  -o-transition: 0.2s color;
+  transition: 0.2s color;
+}
+#faq .target, #faq :target {
+  font-weight: bold;
+}
+.faq-list.affix {
+  top: 60px;
+  width: 270px;
+}
+.faq-sidebar {
+  min-height: 630px;
+}
+.small-left {
+  float: left;
+}
+.small-right {
+  float: right;
+}
+.center {
+  text-align: center;
+  margin: 0 auto;
+}
+.sunrise .btn {
+  position: relative;
+}
+.sunrise .btn:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: inline-block;
+  top: 0px;
+  left: 0px;
+  border-radius: 6px;
+  box-shadow: 0px 0px 25px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 1200px) {
+  .faq-sidebar, .faq-list {
+    display: none;
+  }
+  .small-left, .small-right {
+    float: none;
+  }
+}
+
+.progress {
+  height: 44px;
+}
+.progress-bar {
+  font-size: 1em;
+}
+.legend {
+  position: relative;
+  margin-top: -15px;
+  height: 2em;
+}
+.legend p {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+}
+#features2 .row {
+  padding: 10px 0;
+}
+.thumbnail {
+  font-size: 0.7em;
+  min-height: 14em;
+  display: inline-block;
+  margin: 0;
+  padding: 30px;
+  background-color: rgba(255,255,255,0.95);
+}
+.thumbnail h3 {
+  text-align: center;
+  margin-top: 0;
+}
+.op {
+  background-image: url('http://static.neo900.org/op.png');
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  margin-bottom: 0;
+  background-size: auto 80%;
+}
+.btn-progress {
+  position: relative;
+  overflow: hidden;
+}
+.btn-progressbar {
+  height: 3px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(255,64,0,0.5);
+  box-shadow: 2px 2px 10px 2px white;
+}
+.pcb a {
+  color: rgb(166, 239, 252);
+}
+.pcb a:hover {
+  color: rgba(166, 239, 252, 0.8);
+}
+.pony-controls {
+  position: fixed;
+  bottom: 15px;
+  left: 10px;
+  border: 5px solid rgba(100, 100, 100, 0.6);
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px 5px 5px 5px;
+  z-index: 9999999;
+}
