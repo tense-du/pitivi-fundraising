@@ -44,3 +44,7 @@ def gstreamer(request):
 
 def tech_overview(request):
     return render_to_response("tech-overview.html")
+
+
+def donate(request):
+    return render_to_response("donate.html")

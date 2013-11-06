@@ -7,6 +7,7 @@ urlpatterns = patterns('',
   url(r'^the-plan', v.plan),
   url(r'^gstreamer', v.gstreamer),
   url(r'^tech-overview', v.tech_overview),
+  url(r'^donate', v.donate),
 )
 
 urlpatterns += staticfiles_urlpatterns()
