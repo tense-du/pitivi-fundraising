@@ -83,13 +83,6 @@ h6,
   text-shadow: none;
 }
 
-.openphoenux {
-  background-image: url('http://static.neo900.org/openphoenux.png');
-  background-size: auto 100%;
-  background-position: center right;
-  background-repeat: no-repeat;
-}
-
 .featurette.row {
   padding: 25px 0;
 }
@@ -124,9 +117,6 @@ strong[title] {
 #contact {
   display: none;
   margin-top: 10px;
-}
-.neo900 {
-  font-weight: bold;
 }
 .modal-footer {
   margin-top: 0 !important;
@@ -173,28 +163,22 @@ strong[title] {
 }
 
 h2.h1 { text-align: center; }
-.pcb {
-  background-image: url('http://static.neo900.org/pcb.jpg');
-  background-attachment: fixed;
-  background-position: top center;
-  color: white;
-}
-.n900side {
-  background-image: url('http://static.neo900.org/n900side.jpg');
+.side {
+  background-image: url('/static/images/pitivi-fundraising.png');
   background-position: right top;
   background-size: auto 100%;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
 }
-.n900side .container {
+.side .container {
   /*background-color: rgba(255,255,255,0.75); */
 }
-.sunrise {
-  background-image: url('/static/images/pitivi-blurred.png');
+.blurypitivi {
+  background-image: url('/static/images/pitivi-blurred.jpeg');
   background-attachment: fixed;
   background-position: top center;
   color: white;
 }
-.sunrise .container {
+.blurypitivi .container {
   text-shadow: 0px 0px 40px black, 1px 1px 0px rgba(0,0,0,0.4);
 }
 .pcb .row {
@@ -243,10 +227,10 @@ h2.h1 { text-align: center; }
   text-align: center;
   margin: 0 auto;
 }
-.sunrise .btn {
+.blurypitivi .btn {
   position: relative;
 }
-.sunrise .btn:after {
+.blurypitivi .btn:after {
   content: "";
   width: 100%;
   height: 100%;
@@ -293,17 +277,11 @@ h2.h1 { text-align: center; }
   margin: 0;
   padding: 30px;
   background-color: rgba(255,255,255,0.95);
+  vertical-align: middle !important;
 }
 .thumbnail h3 {
   text-align: center;
   margin-top: 0;
-}
-.op {
-  background-image: url('http://static.neo900.org/op.png');
-  background-position: bottom right;
-  background-repeat: no-repeat;
-  margin-bottom: 0;
-  background-size: auto 80%;
 }
 .btn-progress {
   position: relative;
