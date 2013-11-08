@@ -14,14 +14,14 @@ macro wp2name ["Work Package 2: Feature development and performance fixes"]
 
 macro allocate_devs    [allocate mathieu, thibault
                         flags mathieu, thibault]
-macro allocate_all     [allocate mathieu, jeff, thibault
-                        flags mathieu, jeff, thibault]
-macro allocate_market  [allocate jeff
-                        flags jeff]
-macro allocate_design  [allocate jeff
-                        flags jeff]
-macro allocate_jeff    [allocate jeff
-                        flags jeff]
+macro allocate_all     [allocate mathieu, thibault
+                        flags mathieu, thibault]
+macro allocate_market  [allocate mathieu, thibault
+                        flags mathieu, thibault]
+macro allocate_design  [allocate mathieu, thibault
+                        flags mathieu, thibault]
+macro allocate_jeff    [allocate mathieu, thibault
+                        flags mathieu, thibault]
 macro allocate_mathieu [allocate mathieu
                         flags mathieu]
 macro allocate_thib    [allocate thibault
