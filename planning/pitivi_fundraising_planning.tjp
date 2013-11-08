@@ -107,7 +107,23 @@ task project ${fullname} {
   task wp1 ${wp1name} {
     task qa_infrastucture "Maintain and enhance our Quality Assurance infrastucture" {
       ${allocate_thib}
-      effort 30d
+
+      priority 750
+      task daily_build_packages "Set up daily build packages for Fedora, Debian and Ubuntu with cerbero" {
+        effort 10d
+      }
+
+      task ges_project_launcher "Port our tests to ges-project-launcher and gst-validate" {
+        effort 5d
+      }
+
+      task dogtails_tests "Set up and clean up dogtails tests on the server" {
+        effort 5d
+      }
+
+      task clean_up_settup "Clean everything up and make sure it is future proof" {
+        effort 5d
+      }
 
       # TODO Port all our integration tests to ges-project-launcher
       # TODO Properly setup dogtails test
@@ -144,17 +160,17 @@ task project ${fullname} {
         effort 22d
       }
 
-      task fix_gnl "Fix GnonLin" {
+      task fix_gnl "Fix bugs found in GnonLin" {
         ${allocate_devs}
         effort 12d
       }
 
-      task fix_gst "Fix Gstreamer core and its plugins" {
+      task fix_gst "Fix any bug found in Gstreamer core and its plugins" {
         ${allocate_devs}
         effort 32d
       }
 
-      task fix_ges "Fix GStreamer Editing Services" {
+      task fix_ges "Fix any bug found in GStreamer Editing Services" {
         ${allocate_devs}
         effort 22d
       }
@@ -164,7 +180,7 @@ task project ${fullname} {
         effort 12d
       }
 
-      task fix_pitivi "Fix PiTiVi" {
+      task fix_pitivi "Fix any bug found in PiTiVi" {
         ${allocate_all}
         effort 12d
       }
@@ -172,7 +188,7 @@ task project ${fullname} {
 
     task Documentation "Update documentation and examples for GES and Pitivi " {
       priority 10
-      task pitivi "Update the user manual with the latest features and changes" {
+      task pitivi "Update the user manual with latest features and changes" {
         ${allocate_jeff}
         effort 5d
       }
@@ -212,7 +228,7 @@ task project ${fullname} {
         effort 15d
       }
 
-      task release "Release 1.0 \o/ \o/ \o/" {
+      task release "Release the fully functionnal 1.0 version" {
         depends !fix_bugs_found
         ${allocate_all}
         effort 1d
