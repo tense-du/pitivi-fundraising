@@ -125,8 +125,6 @@ task project ${fullname} {
         effort 5d
       }
 
-      # TODO Port all our integration tests to ges-project-launcher
-      # TODO Properly setup dogtails test
       # TODO Find a real hosting server
         # QUESTION: Propose some hosting service to get people's broken projects so we can fix them, and integrate them in our QA tool?
       #
@@ -238,7 +236,20 @@ task project ${fullname} {
 
   task wp2 ${wp2name} {
     depends !wp1
-    task t1 "Profile and fix any 'low hanging' major performance issue" {
+    task simple_perfomance_fixes "Profile and fix any 'low hanging' major performance issue" {
+      task profile_pitivi "Profile pitivi" {
+        ${allocate_all}
+        effort 5d
+      }
+
+      task fix_perfs_in_ges "Improve perfomances in Gst, GES" {
+        ${allocate_all}
+        effort 10d
+      }
+      task fix_perfs_in_pitivi "Improve perfomances in Pitivi" {
+        ${allocate_all}
+        effort 10d
+      }
     }
     task t2 "Task 2"
   }
