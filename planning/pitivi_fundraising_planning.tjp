@@ -30,7 +30,7 @@ macro allocate_thib    [allocate thibault
 /****************************
  *  Main project definition *
  ****************************/
-project ${name} ${fullname}  2014-01-01-0:00--0500 +12m {
+project ${name} ${fullname}  2014-01-01-0:00--0500 +24m {
   timezone "Europe/Paris"
   timeformat "%Y-%m-%d"
   numberformat "-" "" "," "." 1    # Use US format for numbers
@@ -86,7 +86,6 @@ rate 150.0 # Default daily rate
 resource team "Pitivi team" {
   resource thibault  "Thibault Saunier" {
     email "tsaunier@gnome.org"
-    rate 170.0
   }
 
   resource mathieu "Mathieu duponchelle" {
@@ -243,15 +242,139 @@ task project ${fullname} {
       }
 
       task fix_perfs_in_ges "Improve perfomances in Gst, GES" {
+        depends !profile_pitivi
         ${allocate_all}
         effort 10d
       }
       task fix_perfs_in_pitivi "Improve perfomances in Pitivi" {
+        depends !profile_pitivi
         ${allocate_all}
         effort 10d
       }
     }
-    task t2 "Task 2"
+    task speed_control "Speed control, with frame intepollation" {
+      ${allocate_mathieu}
+
+      task cleanup_videorate_patch "Cleanup and get merged current code in GStreamer" {
+        ${allocate_mathieu}
+        effort 2d
+      }
+
+      task implement_audiorate_control "Implement speedrate control for audio" {
+        ${allocate_mathieu}
+        effort 5d
+      }
+
+      task implement_ui_in_pitivi "Implement clean and polished UI for speedcontrol in Pitivi" {
+        depends !cleanup_videorate_patch
+        depends !implement_audiorate_control
+        ${allocate_mathieu}
+        effort 10d
+      }
+
+      task frame_interpollation "Cleanup and get merged slowmo plugin for GStreamer" {
+        depends !implement_ui_in_pitivi
+        ${allocate_mathieu}
+        effort 15d
+      }
+
+      task pitivi_frame_interpolation "Properly handle the slowmo plugin in pitivi" {
+        depends !frame_interpollation
+        ${allocate_mathieu}
+        effort 3d
+      }
+    }
+
+    task hardware_acceleration "Hardware accelerated decoding and encoding" {
+      ${allocate_thib}
+
+      task vaapi "Cleanup and get Vaapi plugins fully usable in Pitivi" {
+        task vaapi_in_bad "Cleanup and get VAAPI plugins merged into gst-plugins-bad" {
+          ${allocate_thib}
+          effort 30d
+        }
+
+        task fix_vaapi_for_ges "Fix VAAPI encoder and decoder to play well with GES" {
+          depends !vaapi_in_bad
+          ${allocate_thib}
+          effort 20d
+        }
+      }
+
+      task vdpau "Cleanup and get VDPAU plugin fully usable in pitivi" {
+        task clean_vdpau "Cleanup and make use of latest features of Gst in VDPAU plugin" {
+          ${allocate_thib}
+          effort 30d
+        }
+
+        task fix_vdpau_for_ges "Fix VDPAU encoder and decoder to play well with GES" {
+          depends !clean_vdpau
+          ${allocate_thib}
+          effort 20d
+        }
+      }
+    }
+
+    task title "Implement better UI for titles in Pitivi" {
+      ${allocate_all}
+      effort 20d
+    }
+
+    task proxy_editing "Properly finnish proxy editing implementation" {
+      task finnish_ges_implementation "Review and cleanup current proxy editing branch in GES" {
+        ${allocate_all}
+        effort 10d
+      }
+
+      task proxy_test  "Implement full test suite for proxy editing in GES" {
+        depends !finnish_ges_implementation
+        ${allocate_all}
+        effort 5d
+      }
+
+
+      task proxy_ui  "Implement proxy editing UI in Pitivi" {
+        depends !proxy_test
+        ${allocate_all}
+        effort 10d
+      }
+    }
+
+    task edl_formatter "Implement an EDL formatter" {
+      ${allocate_all}
+      effort 15d
+    }
+
+    task colorimetrie "Implement proper interfaces for color correction in Pitivi" {
+      ${allocate_all}
+      effort 20d
+    }
+
+    task windows "Port pitivi on windows" {
+      ${allocate_all}
+
+      task port "Compile and run pitivi on windows" {
+        effort 40d
+      }
+
+      task generate_installer "Generate installer for windows" {
+        depends !port
+        effort 10d
+      }
+    }
+
+    task mac "Port pitivi to mac os X" {
+      ${allocate_all}
+
+      task port "Compile and run pitivi on mac OS" {
+        effort 30d
+      }
+
+      task generate_installer "Generate installer for mac OS" {
+        depends !port
+        effort 10d
+      }
+    }
   }
 
   task deliveries "Deliveries" {
