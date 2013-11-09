@@ -236,6 +236,7 @@ task project ${fullname} {
   task wp2 ${wp2name} {
     depends !wp1
     task simple_perfomance_fixes "Profile and fix any 'low hanging' major performance issue" {
+      priority 500
       task profile_pitivi "Profile pitivi" {
         ${allocate_all}
         effort 5d
@@ -253,6 +254,7 @@ task project ${fullname} {
       }
     }
     task speed_control "Speed control, with frame intepollation" {
+      priority 690
       ${allocate_mathieu}
 
       task cleanup_videorate_patch "Cleanup and get merged current code in GStreamer" {
@@ -286,6 +288,7 @@ task project ${fullname} {
     }
 
     task hardware_acceleration "Hardware accelerated decoding and encoding" {
+      priority 700
       ${allocate_thib}
 
       task vaapi "Cleanup and get Vaapi plugins fully usable in Pitivi" {
@@ -302,6 +305,7 @@ task project ${fullname} {
       }
 
       task vdpau "Cleanup and get VDPAU plugin fully usable in pitivi" {
+        depends !vaapi
         task clean_vdpau "Cleanup and make use of latest features of Gst in VDPAU plugin" {
           ${allocate_thib}
           effort 30d
@@ -321,6 +325,7 @@ task project ${fullname} {
     }
 
     task proxy_editing "Properly finnish proxy editing implementation" {
+      priority 510
       task finnish_ges_implementation "Review and cleanup current proxy editing branch in GES" {
         ${allocate_all}
         effort 10d
@@ -341,16 +346,19 @@ task project ${fullname} {
     }
 
     task edl_formatter "Implement an EDL formatter" {
+      priority 520
       ${allocate_all}
       effort 15d
     }
 
     task colorimetrie "Implement proper interfaces for color correction in Pitivi" {
+      priority 550
       ${allocate_all}
       effort 20d
     }
 
     task windows "Port pitivi on windows" {
+      priority 630
       ${allocate_all}
 
       task port "Compile and run pitivi on windows" {
@@ -364,6 +372,7 @@ task project ${fullname} {
     }
 
     task mac "Port pitivi to mac os X" {
+      priority 650
       ${allocate_all}
 
       task port "Compile and run pitivi on mac OS" {
