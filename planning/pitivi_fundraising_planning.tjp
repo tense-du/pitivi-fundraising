@@ -9,8 +9,8 @@
 
 macro name ["pitivi.fundraising"]
 macro fullname ["Pitivi: Open source video edition to the next level"]
-macro wp1name ["Work Package 1: Bug fixing and Quality Assurance"]
-macro wp2name ["Work Package 2: Feature development and performance fixes"]
+macro wp1name ["WP 1: Bug fixing and Quality Assurance"]
+macro wp2name ["WP 2: Feature development and performance fixes"]
 
 macro allocate_devs    [allocate mathieu, thibault
                         flags mathieu, thibault]
@@ -86,6 +86,8 @@ rate 150.0 # Default daily rate
 resource team "Pitivi team" {
   resource thibault  "Thibault Saunier" {
     email "tsaunier@gnome.org"
+    limits { weeklymax 24h }
+    rate 170.0 # Default daily rate
   }
 
   resource mathieu "Mathieu duponchelle" {
