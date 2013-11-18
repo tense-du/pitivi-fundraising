@@ -144,6 +144,7 @@ p.tj_journal {
   font-size:12px;
   vertical-align:top;
   padding-top:1px;
+  padding-left:10px;
 }
 
 /* The box around the icon to the right of the text label. This is
