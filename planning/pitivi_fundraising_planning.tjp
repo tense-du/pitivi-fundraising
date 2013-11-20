@@ -255,6 +255,7 @@ task project ${fullname} {
         effort 10d
       }
     }
+
     task speed_control "Speed control, with frame intepollation" {
       priority 690
       ${allocate_mathieu}
@@ -324,6 +325,11 @@ task project ${fullname} {
     task title "Implement better UI for titles in Pitivi" {
       ${allocate_all}
       effort 20d
+    }
+
+    task title "Implement beziers curve interpolation for keyframes" {
+      ${allocate_all}
+      effort 10d
     }
 
     task proxy_editing "Properly finnish proxy editing implementation" {
