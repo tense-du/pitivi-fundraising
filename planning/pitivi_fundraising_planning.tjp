@@ -94,9 +94,9 @@ resource team "Pitivi team" {
     email "mduponchelle1@gmail.com"
   }
 
-  resource jeff "Jean Francois Fortin-tam" {
-    email "nekohayo@gmail.com"
-  }
+  #resource jeff "Jean Francois Fortin-tam" {
+    #email "nekohayo@gmail.com"
+  #}
 }
 
 /***********************
