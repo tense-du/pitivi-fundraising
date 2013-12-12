@@ -110,7 +110,7 @@ task project ${fullname} {
       ${allocate_thib}
 
       priority 750
-      task daily_build_packages "Set up daily build packages for Fedora, Debian and Ubuntu with cerbero" {
+      task daily_build_packages "Set up bundling for various platforms" {
         effort 10d
       }
 
