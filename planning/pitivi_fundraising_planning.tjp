@@ -327,7 +327,7 @@ task project ${fullname} {
       effort 20d
     }
 
-    task title "Implement beziers curve interpolation for keyframes" {
+    task "Implement beziers curve interpolation for keyframes" {
       ${allocate_all}
       effort 10d
     }
